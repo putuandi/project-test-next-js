@@ -12,6 +12,7 @@ export default function RootLayout({
         <header className="flex justify-center gap-4 bg-green-100 p-4 text-black text-lg">
           <Link href='/'>Home</Link>
           <Link href='/product'>Product</Link>
+          <Link href='/blog'>Blog</Link>
         </header>
         {children}
       </body>
