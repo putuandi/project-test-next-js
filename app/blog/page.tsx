@@ -1,5 +1,6 @@
 import Link from "next/link";
 import GetPosts from "../components/GetPosts";
+import ItemPost from "../components/ItemPost";
 
 async function Blog() {
     const blog = await GetPosts();
@@ -12,12 +13,7 @@ async function Blog() {
                 </h1>
                 <div className="grid grid-cols-4 gap-4">
                     {blog.map((post : any, i : any) => {
-                        return (
-                            <div key={post.id} className="p-4 rounded-md bg-slate-500">
-                                <h5>{post.title}</h5>
-                                <Link href={`/blog/${post.id}`} className="text-blue-300 text-sm">Learn more</Link>
-                            </div>
-                        )
+                        return <ItemPost post={post} key={post.id} />
                     })}
                 </div>
             </div>
